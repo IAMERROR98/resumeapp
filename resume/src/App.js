@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+//import { AppBar as MuiAppBar, Toolbar} from '@material-ui/core/';
+//import logo from './logo.svg';
+//import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Main from './pages/main.js';
+import Accounthome from './pages/accountHome.js';
+import Error from './pages/error.js';
 
+
+//this switches to different pages
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path = "/" element={<Main />}/>
+        <Route exact path = "/account" element= {<Accounthome />}/>
+        <Route path = "*" element= {<Error />}/>
+      </Routes>
+    </Router>
+ 
   );
-}
 
+}
 export default App;

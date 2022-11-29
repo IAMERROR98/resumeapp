@@ -1,0 +1,6 @@
+        <Route exact path = "/" render={props => <Main {...props}/>} />
+       
+       
+            <Route exact path = "/account" render= {props => <Accounthome {...props}/>}/>
+
+                <Header title= "Imaut's finest collectables"></Header>
